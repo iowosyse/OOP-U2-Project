@@ -3,7 +3,7 @@ package Project;
 import java.util.*;
 
 public class Book {
-    public static int idCounter = 5;
+    public static int idCounter = 6;
     private String ISBN;
     private String title;
     public boolean isAvailable;

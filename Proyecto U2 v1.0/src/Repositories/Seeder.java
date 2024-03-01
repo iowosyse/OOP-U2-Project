@@ -12,6 +12,19 @@ import java.util.Date;
 /**When running the program this will pop up and start some classes and attributes*/
 public class Seeder {
     public static void initialize(){
+        Author dante = new Author();
+        Date ddate = new Date();
+        Date dCD = new Date();
+        dCD.setDate(1);
+        dCD.setMonth(0);
+        dCD.setYear(1321);
+        ddate.setDate(14);
+        ddate.setMonth(8);
+        ddate.setYear(1265);
+        dante.setProfile("Dante", "Alighieri", ddate);
+
+        Book divineComedy = new Book("what?", "The Divine Comedy", true, dCD, "B|5", dante);
+
         Author jeffKinney = new Author();
         Date jkDate = new Date();
         Date doawk = new Date();
@@ -69,10 +82,12 @@ public class Seeder {
         BookRepositories.books.add(diaryOfAWimpyKid2);
         BookRepositories.books.add(endersGame);
         BookRepositories.books.add(it);
+        BookRepositories.books.add(divineComedy);
 
         AuthorRepositories.authors.add(jeffKinney);
         AuthorRepositories.authors.add(orsonScottCard);
         AuthorRepositories.authors.add(stephenKing);
+        AuthorRepositories.authors.add(dante);
 
         Date candeBD = new Date();
         candeBD.setDate(11);
@@ -93,6 +108,25 @@ public class Seeder {
         endersGame.isAvailable = false;
         firstTransaction.setTransactingClient(cande);
         TransactionRepositories.transactions.add(firstTransaction);
+
+        Date sergioBD = new Date();
+        sergioBD.setDate(8);
+        sergioBD.setMonth(2);
+        sergioBD.setYear(2005);
+
+        Date second = new Date();
+        second.setDate(23);
+        second.setMonth(1);
+        second.setYear(2024);
+
+        Client sergio = new Client("Sergio", "Rodriguez", sergioBD);
+        ClientRepositories.clients.add(sergio);
+
+        Transaction secondTransaction = new Transaction("T|0001", "Borrow", second, sergio, divineComedy);
+        sergio.getBorrowedBooks().add(divineComedy);
+        divineComedy.isAvailable = false;
+        secondTransaction.setTransactingClient(sergio);
+        TransactionRepositories.transactions.add(secondTransaction);
 
         BookRepositories.setAvailableBooks();
         BookRepositories.setNotAvailableBooks();

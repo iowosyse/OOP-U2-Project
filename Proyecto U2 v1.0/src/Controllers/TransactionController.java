@@ -29,7 +29,7 @@ public class TransactionController {
                 System.out.printf("| %-9s | %-6s | %-10s | %-20s | %-9s | %-22s |%n", "ID", "Type", "Date", "Client name", "BookID", "Title");
                 System.out.printf("-----------------------------------------------------------------------------------------------%n");
                 for (Transaction toShow : TransactionRepositories.transactions){
-                    if (toShow.getDateOfTransaction().before(topLimit) && toShow.getDateOfTransaction().after(botLimit)) {
+                    if (toShow.getDateOfTransaction().after(botLimit) && toShow.getDateOfTransaction().before(topLimit)) {
                         System.out.printf("| %-9s | %-6s | %-10s | %-20s | %-9s | %-22s |%n", toShow.gettID(),
                                 toShow.typeOfTransaction, toShow.getDateOfTransaction().getDate() + "-" +
                                         (toShow.getDateOfTransaction().getMonth() + 1) + "-" + toShow.getDateOfTransaction().getYear(),
@@ -127,7 +127,7 @@ public class TransactionController {
         botLimit.setYear(aux);
         sc.nextLine();
 
-        botLimit.setHours(12);
+        botLimit.setHours(00);
         botLimit.setMinutes(00);
         botLimit.setSeconds(00);
 
@@ -147,7 +147,7 @@ public class TransactionController {
         topLimit.setYear(aux);
         sc.nextLine();
 
-        topLimit.setHours(12);
+        topLimit.setHours(00);
         topLimit.setMinutes(00);
         topLimit.setSeconds(00);
 
