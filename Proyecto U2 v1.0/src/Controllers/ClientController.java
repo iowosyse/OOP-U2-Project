@@ -3,41 +3,16 @@ package Controllers;
 import Project.*;
 import Repositories.*;
 import java.util.*;
+import UtilitaryClasses.*;
 
 public class ClientController {
     static Scanner sc = new Scanner(System.in);
 
     public static void createClient() {
-        Date dateOfBirth = new Date();
         Client newClient = new Client();
-        String aux1, aux2;
-        int aux3;
 
-        System.out.println("What's the client's name?");
-        System.out.print(">> ");
-        aux1 = sc.nextLine();
 
-        System.out.println("What's the client's last name?");
-        System.out.print(">> ");
-        aux2 = sc.nextLine();
-
-        System.out.println("When's their birthday?"); //lego batman 2 goty 2024
-        System.out.print("\tDay >> ");
-        aux3 = sc.nextInt();
-        dateOfBirth.setDate(aux3);
-        sc.nextLine();
-
-        System.out.print("\tMonth(numeric) >> ");
-        aux3 = sc.nextInt() - 1;
-        dateOfBirth.setMonth(aux3);
-        sc.nextLine();
-
-        System.out.print("\tYear >> ");
-        aux3 = sc.nextInt();
-        dateOfBirth.setYear(aux3);
-        sc.nextLine();
-
-        newClient.setProfile(aux1, aux2, dateOfBirth);
+        newClient.setProfile(StuffCreator.createProfile());
 
         ProfileRepositories.profiles.add(newClient.getProfile());
         ClientRepositories.clients.add(newClient);

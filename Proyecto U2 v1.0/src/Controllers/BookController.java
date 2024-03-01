@@ -243,9 +243,8 @@ public class BookController {
         Author theAuthor;
         Book toDelete;
 
-
         do {
-            showBooks(1);
+            BookRepositories.showAvailableBooks();
 
             System.out.println("---If you want to delete a book that is not shown the client must return it.---");
             System.out.println("What book do you want to delete?");
@@ -254,7 +253,7 @@ public class BookController {
             option = sc.nextInt();
 
             if (option != 0) {
-                while (option > BookRepositories.books.size() || option < 0) {
+                while (option > BookRepositories.availableBooks.size() || option < 0) {
                     System.out.println("Please enter a valid option");
                     System.out.print(">> ");
                     option = sc.nextInt();
@@ -265,18 +264,13 @@ public class BookController {
                     break;
                 }
 
-                toDelete = BookRepositories.books.get(option - 1);
+                toDelete = BookRepositories.availableBooks.get(option - 1);
 
                 theAuthor = toDelete.getAuthor();
 
                 theAuthor.writtenBooks.remove(toDelete);
                 BookRepositories.books.remove(toDelete);
-
-                if (toDelete.isAvailable) {
-                    BookRepositories.availableBooks.remove(toDelete);
-                } else {
-                    BookRepositories.notAvailableBooks.remove(toDelete);
-                }
+                BookRepositories.availableBooks.remove(toDelete);
                 System.out.println("Book successfully deleted!");
             }
         } while (option != 0);

@@ -3,43 +3,16 @@ package Controllers;
 import java.util.*;
 import Project.*;
 import Repositories.*;
+import UtilitaryClasses.StuffCreator;
 
 public class AuthorController {
 
     static Scanner sc = new Scanner(System.in);
 
     public static void createAuthor() {
-        Date dateOfBirth = new Date();
         Author newAuthor = new Author();
-        String aux1, aux2;
-        int aux3;
 
-        System.out.println("What's the author's name?");
-        System.out.print(">> ");
-        aux1 = sc.nextLine();
-
-        System.out.println("What's the author's last name?");
-        System.out.print(">> ");
-        aux2 = sc.nextLine();
-
-        System.out.println("When's their birthday?"); //lego batman 2 goty 2024
-        System.out.print("\tDay >> ");
-        aux3 = sc.nextInt();
-        dateOfBirth.setDate(aux3);
-        sc.nextLine();
-
-        System.out.print("\tMonth(numeric) >> ");
-        aux3 = sc.nextInt();
-        dateOfBirth.setMonth(aux3);
-        sc.nextLine();
-
-        System.out.print("\tYear >> ");
-        aux3 = sc.nextInt();
-        dateOfBirth.setYear(aux3);
-        sc.nextLine();
-
-        newAuthor.setProfile(aux1, aux2, dateOfBirth);
-
+        newAuthor.setProfile(StuffCreator.createProfile());
         ProfileRepositories.profiles.add(newAuthor.getProfile());
         AuthorRepositories.authors.add(newAuthor);
     }

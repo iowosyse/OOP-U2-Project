@@ -10,8 +10,12 @@ public class Author {
         return profile;
     }
 
-    public void setProfile(String name, String lastName, Date dateOfBirth) {
-        profile = new Profile(name, lastName, dateOfBirth);
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+    public void setProfile(String name, String lastName, Date BD) {
+        profile = new Profile(name, lastName, BD);
     }
 
     public void addWrittenBook(Book newBook) {

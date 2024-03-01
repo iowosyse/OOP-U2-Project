@@ -32,7 +32,7 @@ public class TransactionController {
                     if (toShow.getDateOfTransaction().before(topLimit) && toShow.getDateOfTransaction().after(botLimit)) {
                         System.out.printf("| %-9s | %-6s | %-10s | %-20s | %-9s | %-22s |%n", toShow.gettID(),
                                 toShow.typeOfTransaction, toShow.getDateOfTransaction().getDate() + "-" +
-                                toShow.getDateOfTransaction().getMonth() + toShow.getDateOfTransaction().getYear(),
+                                        (toShow.getDateOfTransaction().getMonth() + 1) + "-" + toShow.getDateOfTransaction().getYear(),
                                 toShow.getTransactingClient().getProfile().getName() +
                                         " " + toShow.getTransactingClient().getProfile().getLastName(),
                                 toShow.getTransactedBook().getBookID(), toShow.getTransactedBook().getTitle());
@@ -56,7 +56,7 @@ public class TransactionController {
                     if (toShow.getTransactingClient() == theClient) {
                         System.out.printf("| %-9s | %-6s | %-10s | %-20s | %-9s | %-22s |%n", toShow.gettID(),
                                 toShow.typeOfTransaction, toShow.getDateOfTransaction().getDate() + "-" +
-                                        toShow.getDateOfTransaction().getMonth() + toShow.getDateOfTransaction().getYear(),
+                                        (toShow.getDateOfTransaction().getMonth() + 1) + "-" + toShow.getDateOfTransaction().getYear(),
                                 toShow.getTransactingClient().getProfile().getName() +
                                         " " + toShow.getTransactingClient().getProfile().getLastName(),
                                 toShow.getTransactedBook().getBookID(), toShow.getTransactedBook().getTitle());
@@ -79,7 +79,7 @@ public class TransactionController {
                     if (toShow.getTransactedBook() == theBook) {
                         System.out.printf("| %-9s | %-6s | %-10s | %-20s | %-9s | %-22s |%n", toShow.gettID(),
                                 toShow.typeOfTransaction, toShow.getDateOfTransaction().getDate() + "-" +
-                                        toShow.getDateOfTransaction().getMonth() + toShow.getDateOfTransaction().getYear(),
+                                        (toShow.getDateOfTransaction().getMonth() + 1) + "-" + toShow.getDateOfTransaction().getYear(),
                                 toShow.getTransactingClient().getProfile().getName() +
                                         " " + toShow.getTransactingClient().getProfile().getLastName(),
                                 toShow.getTransactedBook().getBookID(), toShow.getTransactedBook().getTitle());
@@ -95,7 +95,7 @@ public class TransactionController {
                 for (Transaction toShow : TransactionRepositories.transactions) {
                     System.out.printf("| %-9s | %-6s | %-10s | %-20s | %-9s | %-22s |%n", toShow.gettID(),
                             toShow.typeOfTransaction, toShow.getDateOfTransaction().getDate() + "-" +
-                                    toShow.getDateOfTransaction().getMonth() + toShow.getDateOfTransaction().getYear(),
+                                    (toShow.getDateOfTransaction().getMonth() + 1) + "-" + toShow.getDateOfTransaction().getYear(),
                             toShow.getTransactingClient().getProfile().getName() +
                                     " " + toShow.getTransactingClient().getProfile().getLastName(),
                             toShow.getTransactedBook().getBookID(), toShow.getTransactedBook().getTitle());
@@ -170,7 +170,7 @@ public class TransactionController {
 
         if (option == 1) {
             Book toLend;
-            
+
             newTransaction.setTID();
             setTransactionDate(dateOfTransaction);
 
@@ -267,7 +267,7 @@ public class TransactionController {
         System.out.println("===============================");
     }
 
-    public static void setTransactionDate(Date dateOfTransaction) {
+    public static void setTransactionDate(Date dateOfTransaction) { //somehow the all mighty stuff creator does not work here ;-;
         int aux;
 
         System.out.println("What's the date of the transaction?");

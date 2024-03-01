@@ -6,7 +6,6 @@ public class Client {
     public static Random ran = new Random();
     private Profile profile;
     private ArrayList<Book> borrowedBooks = new ArrayList<>();
-    private int clientID = 0;
 
     public Client() {
 
@@ -16,7 +15,7 @@ public class Client {
         setProfile(name, lastName, BD);
     }
 
-    public int getNumberOfBorrowedBooks() {
+    public int getNumberOfBorrowedBooks() { //this because of phantom books
         int n = 0;
 
         for (Book bok : borrowedBooks) {
@@ -29,15 +28,7 @@ public class Client {
     }
 
     public boolean hasBooks(){
-        boolean hasBooks;
-
-        if (!borrowedBooks.isEmpty()) {
-            hasBooks = true;
-        } else {
-            hasBooks = false;
-        }
-
-        return hasBooks;
+        return !borrowedBooks.isEmpty(); //gracias profe
     }
 
     public void showBorrowedBooks() {
@@ -56,13 +47,14 @@ public class Client {
         profile = new Profile(name, lastName, dateOfBirth);
     }
 
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
     public Profile getProfile() {
         return profile;
     }
 
-    public int getClientID() {
-        return clientID;
-    }
 
     public ArrayList<Book> getBorrowedBooks() {
         return borrowedBooks;
