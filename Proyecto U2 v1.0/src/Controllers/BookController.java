@@ -4,6 +4,7 @@ package Controllers;
 import java.util.*;
 import Project.*;
 import Repositories.*;
+import UtilitaryClasses.StuffCreator;
 
 public class BookController {
     static Scanner sc = new Scanner(System.in); //static attributes designed to use them in many methods
@@ -13,6 +14,7 @@ public class BookController {
         String aux;
         int aux2;
         Book newBook = new Book();
+        Date bookDate;
         Author theAuthorOfThisBook;
         Date newBookPublishDate = new Date();
 
@@ -50,20 +52,8 @@ public class BookController {
                 newBook.setTitle(aux);
 
                 System.out.println("When was it published?");
-                System.out.print("Day>> ");
-                aux2 = sc.nextInt();
-                sc.nextLine();
-                newBook.publishDate.setDate(aux2);
-
-                System.out.print("Month>> ");
-                aux2 = sc.nextInt();
-                sc.nextLine();
-                newBook.publishDate.setMonth(aux2);
-
-                System.out.print("Year>> ");
-                aux2 = sc.nextInt();
-                sc.nextLine();
-                newBook.publishDate.setYear(aux2);
+                bookDate = StuffCreator.createDate();
+                newBook.setPublishDate(bookDate);
 
                 System.out.println("What's the ISBN?");
                 aux = sc.nextLine();
@@ -73,6 +63,7 @@ public class BookController {
 
                 BookRepositories.books.add(BookRepositories.addPhantomBook());
                 BookRepositories.books.add(newBook);
+                BookRepositories.availableBooks.add(newBook);
                 theAuthorOfThisBook.addWrittenBook(newBook);
 
             } else {
@@ -202,21 +193,9 @@ public class BookController {
                         toChange.setTitle(auxStr);
                         break;
                     case 3:
-                        System.out.println("Enter the new date.");
-                        System.out.print("\tDay >> ");
-                        aux = sc.nextInt();
-                        sc.nextLine();
-                        toChange.publishDate.setDate(aux);
+                        Date updatedDate = StuffCreator.createDate();
 
-                        System.out.print("\tMonth >> ");
-                        aux = sc.nextInt();
-                        sc.nextLine();
-                        toChange.publishDate.setMonth(aux);
-
-                        System.out.print("\tYear >> ");
-                        aux = sc.nextInt();
-                        sc.nextLine();
-                        toChange.publishDate.setYear(aux);
+                        toChange.setPublishDate(updatedDate);
                         break;
                     case 4:
                         System.out.println("Enter the new ISBN.");

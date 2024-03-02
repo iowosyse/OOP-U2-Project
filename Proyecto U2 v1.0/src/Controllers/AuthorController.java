@@ -93,23 +93,8 @@ public class AuthorController {
                         break;
                     case 3:
                         System.out.println("Setting new date...");
-                        System.out.println("Enter the new Day.");
-                        System.out.print(">> ");
-                        option = sc.nextInt();
-                        sc.nextLine();
-                        toChange.getProfile().getBirthDate().setDate(option);
-
-                        System.out.println("Enter the new Month.");
-                        System.out.print(">> ");
-                        option = sc.nextInt();
-                        sc.nextLine();
-                        toChange.getProfile().getBirthDate().setMonth(option);
-
-                        System.out.println("Enter the new Year.");
-                        System.out.print(">> ");
-                        option = sc.nextInt();
-                        sc.nextLine();
-                        toChange.getProfile().getBirthDate().setYear(option);
+                        Date newBD = StuffCreator.createDate();
+                        toChange.getProfile().setBirthDate(newBD);
                         break;
                     case 0:
                         System.out.println("Going back...");

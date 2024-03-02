@@ -41,7 +41,7 @@ public class StuffCreator {
 
         System.out.print("\tYear >> ");
         aux3 = sc.nextInt();
-        newDate.setYear(aux3 - 1900);
+        newDate.setYear(aux3);
         sc.nextLine();
 
         return newDate;

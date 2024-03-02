@@ -97,23 +97,9 @@ public class ClientController {
                             break;
                         case 3:
                             System.out.println("Setting new date...");
-                            System.out.println("Enter the new Day.");
-                            System.out.print(">> ");
-                            option = sc.nextInt();
-                            sc.nextLine();
-                            toChange.getProfile().getBirthDate().setDate(option);
+                            Date newBD = StuffCreator.createDate();
 
-                            System.out.println("Enter the new Month.");
-                            System.out.print(">> ");
-                            option = sc.nextInt();
-                            sc.nextLine();
-                            toChange.getProfile().getBirthDate().setMonth(option);
-
-                            System.out.println("Enter the new Year.");
-                            System.out.print(">> ");
-                            option = sc.nextInt();
-                            sc.nextLine();
-                            toChange.getProfile().getBirthDate().setYear(option);
+                            toChange.getProfile().setBirthDate(newBD);
                             break;
                         case 0:
                             System.out.println("Going back...");

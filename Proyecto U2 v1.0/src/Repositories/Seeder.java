@@ -24,6 +24,7 @@ public class Seeder {
         dante.setProfile("Dante", "Alighieri", ddate);
 
         Book divineComedy = new Book("what?", "The Divine Comedy", true, dCD, "B|5", dante);
+        dante.writtenBooks.add(divineComedy);
 
         Author jeffKinney = new Author();
         Date jkDate = new Date();

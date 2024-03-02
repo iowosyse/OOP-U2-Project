@@ -55,4 +55,8 @@ public class Book {
     public void setAuthor(Author author) {
         this.author = author;
     }
+
+    public void setPublishDate(Date date) {
+        publishDate = date;
+    }
 }
