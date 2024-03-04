@@ -7,7 +7,7 @@ public class Menus {
     public static int easterEggCounter = 0;
     public static int counter = 1;
 
-    public static void firstMenu() {
+    public static void titleScreen() {
         int key;
         boolean eg2 = true;
 

@@ -11,6 +11,6 @@ public class Main {
      * engine kaput*/
     public static void main(String[] args) {
         Seeder.initialize();
-        Menus.firstMenu();
+        Menus.titleScreen();
     }
 }
