@@ -1,32 +1,12 @@
 package Repositories;
 
-import Project.Author;
 import Project.Book;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class BookRepositories {
     public static ArrayList<Book> books = new ArrayList<>();
     public static ArrayList<Book> availableBooks = new ArrayList<>();
     public static ArrayList<Book> notAvailableBooks = new ArrayList<>();
-
-    /**We need adding phantom books because when borrowing one, it may replace prior books, this ending in
-     * having the same book borrowed twice or thrice and not being able to return the original books.
-     * Phantom books make space between actual books, so they don't eat each other*/
-    public static Book addPhantomBook() {
-        Book phantomBook;
-        Date phantomDate = new Date();
-        Author phantomAuthor = new Author();
-
-        phantomDate.setDate(0);
-        phantomDate.setMonth(0);
-        phantomDate.setYear(0);
-
-        phantomBook = new Book("", "", true, phantomDate, "", phantomAuthor);
-
-
-        return phantomBook;
-    }
 
     public static void setAvailableBooks (){
         for (Book available : books) {

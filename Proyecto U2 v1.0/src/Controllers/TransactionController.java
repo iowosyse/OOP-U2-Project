@@ -8,7 +8,7 @@ public class TransactionController {
     static Scanner sc = new Scanner(System.in);
 
     public static void showTransactions() {
-        int option, aux, i = 0;
+        int option, aux;
         Date botLimit = new Date(), topLimit = new Date();
 
         System.out.println("===============================");
@@ -205,7 +205,7 @@ public class TransactionController {
 
                     BookRepositories.notAvailableBooks.add(toLend);
                     BookRepositories.availableBooks.remove(toLend);
-                    transactingClient.getBorrowedBooks().add(BookRepositories.addPhantomBook());
+                    //transactingClient.getBorrowedBooks().add(BookRepositories.addPhantomBook());
                     TransactionRepositories.transactions.add(newTransaction);
                 }
             }

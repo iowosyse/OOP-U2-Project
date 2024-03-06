@@ -61,7 +61,6 @@ public class BookController {
 
                 newBook.isAvailable = true;
 
-                BookRepositories.books.add(BookRepositories.addPhantomBook());
                 BookRepositories.books.add(newBook);
                 BookRepositories.availableBooks.add(newBook);
                 theAuthorOfThisBook.addWrittenBook(newBook);
