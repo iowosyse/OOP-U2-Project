@@ -36,7 +36,7 @@ public class Menus {
                     }
                     break;
                 default:
-                    UtilitaryClasses.EasterEggs.findThem(key);
+                    UtilityClasses.EasterEggs.findThem(key);
                     if (counter == 20) {
                         key = 0;
                     }

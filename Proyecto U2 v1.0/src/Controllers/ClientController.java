@@ -3,7 +3,7 @@ package Controllers;
 import Project.*;
 import Repositories.*;
 import java.util.*;
-import UtilitaryClasses.*;
+import UtilityClasses.*;
 
 public class ClientController {
     static Scanner sc = new Scanner(System.in);

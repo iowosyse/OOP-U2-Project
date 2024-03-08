@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Transaction {
 
-    public static Random ran = new Random();
+    static Random ran = new Random();
     private String tID = "";
     public String typeOfTransaction;
     private Date dateOfTransaction;

@@ -172,7 +172,8 @@ public class TransactionController {
             Book toLend;
 
             newTransaction.setTID();
-            setTransactionDate(dateOfTransaction);
+
+            System.out.println("Transaction date set to today.");
 
             BookRepositories.showAvailableBooks();
             System.out.println("Which book do you want to lend?");
@@ -214,8 +215,9 @@ public class TransactionController {
             Book toReturn;
 
             newTransaction.setTID();
-            setTransactionDate(dateOfTransaction);
             newTransaction.typeOfTransaction = "Return";
+
+            System.out.println("Transaction date set to today.");
 
             ClientController.showClients(true);
             System.out.println("Who wants to return a book?");
@@ -265,29 +267,5 @@ public class TransactionController {
             System.out.println("Not an option");
         }
         System.out.println("===============================");
-    }
-
-    public static void setTransactionDate(Date dateOfTransaction) { //somehow the all mighty stuff creator does not work here ;-;
-        int aux;
-
-        System.out.println("What's the date of the transaction?");
-        System.out.print("\tDay >> ");
-        aux = sc.nextInt();
-        dateOfTransaction.setDate(aux);
-        sc.nextLine();
-
-        System.out.print("\tMonth(numeric) >> ");
-        aux = sc.nextInt();
-        dateOfTransaction.setMonth(aux);
-        sc.nextLine();
-
-        System.out.print("\tYear >> ");
-        aux = sc.nextInt();
-        dateOfTransaction.setYear(aux);
-        sc.nextLine();
-
-        dateOfTransaction.setHours(12);
-        dateOfTransaction.setMinutes(01);
-        dateOfTransaction.setSeconds(01);
     }
 }

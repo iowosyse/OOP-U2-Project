@@ -16,15 +16,7 @@ public class Client {
     }
 
     public int getNumberOfBorrowedBooks() { //this because of phantom books
-        int n = 0;
-
-        for (Book bok : borrowedBooks) {
-            if (!bok.getTitle().isEmpty()) {
-                n ++;
-            }
-        }
-
-        return n;
+        return borrowedBooks.size();
     }
 
     public boolean hasBooks(){

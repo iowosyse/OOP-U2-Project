@@ -4,7 +4,7 @@ package Controllers;
 import java.util.*;
 import Project.*;
 import Repositories.*;
-import UtilitaryClasses.StuffCreator;
+import UtilityClasses.StuffCreator;
 
 public class BookController {
     static Scanner sc = new Scanner(System.in); //static attributes designed to use them in many methods
