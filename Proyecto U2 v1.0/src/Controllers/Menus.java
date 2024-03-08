@@ -7,6 +7,7 @@ public class Menus {
     public static int easterEggCounter = 0;
     public static int counter = 1;
 
+    /**First thing to show up*/
     public static void titleScreen() {
         int key;
         boolean eg2 = true;
@@ -215,6 +216,7 @@ public class Menus {
         } while (option != 0);
     }
 
+    /**The program revolves around this menu and its option, can lend and return books*/
     public static void transactionMenu() {
         int option;
 

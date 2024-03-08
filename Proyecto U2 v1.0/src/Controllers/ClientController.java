@@ -8,6 +8,7 @@ import UtilityClasses.*;
 public class ClientController {
     static Scanner sc = new Scanner(System.in);
 
+    /**Adds a Client object to the clients ArrayList*/
     public static void createClient() {
         Client newClient = new Client();
 
@@ -18,6 +19,7 @@ public class ClientController {
         ClientRepositories.clients.add(newClient);
     }
 
+    /**Shows clients with or without the books they've borrowed*/
     public static void showClients(boolean showBooks) {
         int count = 1;
 
@@ -43,6 +45,7 @@ public class ClientController {
         }
     }
 
+    /**Modifies a selected attribute of a Client*/
     public static void updateClientData(){
         int option;
         Client toChange;
@@ -115,6 +118,7 @@ public class ClientController {
         } while (option != 0);
     }
 
+    /**Deletes a Client from the clients ArrayList. Cannot delete someone if they have borrowed books*/
     public static void deleteClient() {
         int option;
         Client toDelete1;

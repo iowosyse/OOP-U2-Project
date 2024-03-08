@@ -17,6 +17,7 @@ public class AuthorController {
         AuthorRepositories.authors.add(newAuthor);
     }
 
+    /**Shows all authors*/
     public static void showAuthors(boolean showBooks) {
         int count = 1;
 
@@ -40,6 +41,7 @@ public class AuthorController {
         }
     }
 
+    /**Modifies a selected attribute of the author object*/
     public static void updateAuthorData() {
         int option;
         Author toChange;
@@ -107,6 +109,7 @@ public class AuthorController {
         } while (option != 0);
     }
 
+    /**Deletes the selected author of the authors ArrayList. Cannot delete someone if they still have books*/
     public static void deleteAuthor() {
         int option;
         Author toDelete1;

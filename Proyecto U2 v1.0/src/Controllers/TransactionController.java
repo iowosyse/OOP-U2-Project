@@ -7,6 +7,7 @@ import java.util.*;
 public class TransactionController {
     static Scanner sc = new Scanner(System.in);
 
+    /**Selects an option on deciding how to print the transactions and then shows them*/
     public static void showTransactions() {
         int option, aux;
         Date botLimit = new Date(), topLimit = new Date();
@@ -108,6 +109,7 @@ public class TransactionController {
         }
     }
 
+    /**Auxiliary method to set the limits while sorting transactions by date*/
     public static void setDates(Date botLimit, Date topLimit) {
         int aux;
 
@@ -153,6 +155,7 @@ public class TransactionController {
 
     }
 
+    /**Adds a Transaction object to its ArrayList and fills its attributes*/
     public static void createTransaction() {
         int option, aux;
         Transaction newTransaction = new Transaction();

@@ -89,6 +89,7 @@ public class BookController {
         return option;
     }
 
+    /**Decides how to show the books and then shows them*/
     public static void showBooks(int option) {
         int count = 1;
 
