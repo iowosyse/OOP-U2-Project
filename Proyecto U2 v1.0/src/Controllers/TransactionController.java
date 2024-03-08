@@ -174,6 +174,8 @@ public class TransactionController {
             newTransaction.setTID();
 
             System.out.println("Transaction date set to today.");
+            System.out.println("------------------------------");
+            dateOfTransaction.setYear(2024);
 
             BookRepositories.showAvailableBooks();
             System.out.println("Which book do you want to lend?");
@@ -218,6 +220,8 @@ public class TransactionController {
             newTransaction.typeOfTransaction = "Return";
 
             System.out.println("Transaction date set to today.");
+            System.out.println("------------------------------");
+            dateOfTransaction.setYear(2024);
 
             ClientController.showClients(true);
             System.out.println("Who wants to return a book?");
