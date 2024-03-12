@@ -152,7 +152,7 @@ public class Menus {
             sc.nextLine();
             System.out.println("===============================");
 
-            //every method has documentation, please read it if don't know how something works
+            //every method has documentation, please read it if you don't know how something works
             switch (option) {
                 case 1:
                     AuthorController.createAuthor();
