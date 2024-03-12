@@ -12,17 +12,17 @@ public class AuthorController {
     public static void createAuthor() {
         Author newAuthor = new Author();
 
-        newAuthor.setProfile(StuffCreator.createProfile());
+        newAuthor.setProfile(StuffCreator.createProfile()); //makes easier the creation of a profile
         ProfileRepositories.profiles.add(newAuthor.getProfile());
         AuthorRepositories.authors.add(newAuthor);
     }
 
     /**Shows all authors*/
-    public static void showAuthors(boolean showBooks) {
+    public static void showAuthors(boolean showBooks) { //should be in repositories or aux methods
         int count = 1;
 
         System.out.printf("| %-3s | %-20s | %-6s |%n", "No.", "Author name", "Birth");
-        System.out.println("---------------------------------------");
+        System.out.println("---------------------------------------"); //just showing stuff
 
         for (Author thisAuthor : AuthorRepositories.authors) {
             System.out.printf("| %-3s | %-20s | %-6s |%n", count, thisAuthor.getProfile().getName() + " " +
@@ -57,7 +57,7 @@ public class AuthorController {
 
             if (option != 0) {
                 while (option > AuthorRepositories.authors.size() || option < 0) {
-                    System.out.println("Please enter a valid option");
+                    System.out.println("Please enter a valid option"); //makes sure does not go out of bounds
                     System.out.print(">> ");
                     option = sc.nextInt();
                     sc.nextLine();
@@ -135,7 +135,7 @@ public class AuthorController {
             } else {
                 toDelete1 = AuthorRepositories.authors.get(option - 1);
 
-                if (!toDelete1.writtenBooks.isEmpty()) {
+                if (!toDelete1.writtenBooks.isEmpty()) { //verifies if can delete
                     System.out.println("This author cannot be deleted since they still have books.");
                     System.out.println("Remove all of their books in the 'Book menu' with the 'Delete a book' option.");
                 } else {
