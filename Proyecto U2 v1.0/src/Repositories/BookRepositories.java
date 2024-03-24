@@ -8,6 +8,7 @@ public class BookRepositories {
     public static ArrayList<Book> availableBooks = new ArrayList<>();
     public static ArrayList<Book> notAvailableBooks = new ArrayList<>();
 
+    //Auxiliary methods
     public static void setAvailableBooks (){
         for (Book available : books) {
             if (available.isAvailable) {
